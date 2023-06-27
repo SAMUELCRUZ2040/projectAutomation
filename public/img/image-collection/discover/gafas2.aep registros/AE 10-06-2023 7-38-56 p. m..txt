@@ -1,0 +1,17 @@
+El registro de procesamiento de Adobe After Effects v22.6 Windows 64 para el procesamiento del proyecto "gafas2.aep"
+
+ se inició en 10/06/2023 a las 7:38:56 p. m.
+
+  10/06/2023 7:38:56 p. m.: Iniciando composición "Comp 1".
+
+  Salida a: C:\Users\snanez\Documents\Django\Comp 1.mov    10/06/2023 7:38:59 p. m.: Composición finalizada "Comp 1".
+
+
+  10/06/2023 7:38:59 p. m.: Iniciando composición "Comp 1".
+
+  Salida a: C:\Users\snanez\Documents\Django\GIF_GAFAS\GIF 1_[#####].tif    10/06/2023 7:39:07 p. m.: Composición finalizada "Comp 1".
+
+
+  Tiempo total transc.: 11 segundos
+Registro cerrado en 10/06/2023 a las 7:39:07 p. m.
+
