@@ -27,7 +27,7 @@
     <!-- animation -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     
-    @vite(['resources/js/app.js', 'resources/sass/app.scss'])
+    @vite(['resources/js/app.js', 'resources/sass/app.scss', 'resources/css/transitions.css'])
     
     <title>Automatización | IzyAcademy</title>
 </head>

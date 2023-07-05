@@ -42,6 +42,7 @@ $(document).ready(function() {
     });
 
     // preloader 
+    
     $('.preloader').delay(1000).fadeOut(1100, function() {
         $(this).remove();
     });

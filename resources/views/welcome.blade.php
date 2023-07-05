@@ -60,21 +60,21 @@
                 <div class="col-sm-4 col-lg-3 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=15" target="_blank">
-                            <img  class="img-fluid" src="https://img.freepik.com/foto-gratis/mujer-joven-sueter-melocoton-casual-mochila-aislado-pared-color-verde-oliva_343596-5324.jpg?w=740&t=st=1687665890~exp=1687666490~hmac=51e33ad5f4c95169c90374c8e6b7008a85a5bd0c3c1e37cc98710410f2ff7fe8" alt="">
+                            <img  class="img-fluid" src="{{asset("img/img-home/img-1.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-lg-6 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=16" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/foto-gratis/mujer-joven-expresiva-posando_176474-26825.jpg?w=900&t=st=1687666028~exp=1687666628~hmac=04979872ad68f61d2e340164d354a963befa2110e14d0473d09583d040f43597" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-2.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-4 col-lg-3 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=23" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/foto-gratis/colegiada-silla-estilo-memphis_23-2148203797.jpg?w=740&t=st=1687664358~exp=1687664958~hmac=9e0d512ec689bd0ebaf39ad04c1f61d6e3b5fcd11a1b9ba393fa32ab5bdc5db5" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-3.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -83,14 +83,14 @@
                 <div class="col-sm-6 col-md-6 col-lg-6 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=19" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/foto-gratis/mujer-oficina-entusiasta-mujer-negocios-sosteniendo-computadora-portatil-gritando-alegria-celebrando-regocijandose-pie-sobre-fondo-blanco_1258-86049.jpg?w=900&t=st=1687665413~exp=1687666013~hmac=afb42629dbc6ddbd18ab04420796d5eb0661993e6b58ab896b5b5dfa4a2d7e17" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-4.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-6 col-lg-6 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=21" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/foto-gratis/retrato-hombre-africano-sonriente-emocionado-anteojos_171337-7794.jpg?w=900&t=st=1687666245~exp=1687666845~hmac=9993b23531b5afa031c261232cffb3c70e5a29ab29ec686eebf2b87e0ea127d9" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-5.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -99,21 +99,21 @@
                 <div class="col-md-3 col-lg-3 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=27" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/foto-gratis/retrato-hermosa-adolescente-cerca_23-2149153351.jpg?w=740&t=st=1687664483~exp=1687665083~hmac=77b26a5ca64608dd40e6b344884192c3b51bed7577aac9e23bdf5a2144951a3c" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-6.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=54" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/fotos-premium/feliz-joven-estudiante-laptop-mirando-su-companero-sentado-frente-discusion-o-consulta-leccion_274679-9699.jpg?w=900" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-7.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-3 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=52" target="_blank">
-                            <img class="img-fluid" src="https://img.freepik.com/foto-gratis/alegre-hombre-barbudo-gafas-camiseta-blanca-laptop-manos_171337-7879.jpg?w=740&t=st=1687666127~exp=1687666727~hmac=ea9b6cb929158597f1ed4e73a7d89bd704ab42d41f827580e0583bb2c04f6043" alt="">
+                            <img class="img-fluid" src="{{asset("img/img-home/img-8.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
