@@ -3,17 +3,17 @@
 
 @include('layouts.loader')
 
-  @vite('resources/js/showCourseCreate.js')
+  @vite('resources/js/app.js')
 
 <div id="container-show-posts" class="container-show-posts row">
   @foreach ($show as $posts)  
   <div class="col-lg-12 container-text-printipal">
     <div class="container">
       <div id="container-letter" class="container-letter">
-        <span id="Effect-letter">Explore what's there for</span>
+        <span id="Effect-letter">Explora lo que tenemos para ti</span>
       </div>
       <div id="container-letter" class="container-letter">
-        <span id="Effect-letter">for you in {{$posts -> CategorieName}}</span>
+        <span id="Effect-letter" style="font-size: 40px">En la categoria de {{$posts -> CategorieName}}</span>
       </div>
     </div>
   </div>
@@ -23,7 +23,7 @@
 <div class="container mb-5">
   <div class="container-select-category">
     <select class="form-select" style="width: 35%" onchange="redirectToUrl(this)">
-        <option selected>Select the category</option>
+        <option selected>Seleccione la categoría</option>
         @foreach ($showSelect as $course)
           <option value="{{ route('show.post', $course->id)}}">
             {{ $course->CategorieName }}
@@ -45,18 +45,18 @@ function redirectToUrl(selectElement) {
     <div class="accordion-item">
       <h2 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          What action do you want to perform?
+          ¿Qué acción deseas realizar?
         </button>  
       </h2>
       <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
         <div class="accordion-body d-flex justy-content-start align-items-start p-4" style="gap: 22px">
           @foreach ($show as $posts)
-            <a href="{{route('course.create', $posts)}}" id="Create-course" class="btn btn-primary mb-5">Create Course</a>
-            <a href="{{route('edit.posts', $posts)}}" class="btn btn-warning mb-5">Edit Category</a>
+            <a href="{{route('course.create', $posts)}}"  id="effect-button" >Create Course</a>
+            <a href="{{route('edit.posts', $posts)}}"  id="effect-button" >Edit Category</a>
             <form id="deleteForm" action="{{ route('destroy.posts', $posts) }}" method="POST">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-secondary delete-btn mb-5" type="button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Delete Category</button>
+                <button id="effect-button" class="delete-btn" type="button" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="border: 0;background: none">Delete Category</button>
             </form>
             @include('layouts.alert')
          @endforeach
@@ -85,9 +85,11 @@ function redirectToUrl(selectElement) {
                 <div class="container-desription">
                   <p>{{ $course->category_id }}</p>
                   <p>{{ $course->created_at }}</p>
-                  <h3>{{ $course->CategorieName}}</h3>
+                  <h3 class="text-start fw-normal fs-4 tex-dark">{{ $course->NameCourse}}</h3>
                   <p>{{ $course->descriptionCourse }}</p>
-                  <button class="btn btn-primary">Buy Now ${{ $course->coursePrice }} USD</button>
+                  <div class="container-button d-flex justify-content-center aligm-items-center">
+                    <button id="effect-button" type="submit" class="btn fs-6" style="width: 100%">Buy Now ${{ $course->coursePrice }} USD</button>
+                  </div>
                 </div>
               </div>
             </div>

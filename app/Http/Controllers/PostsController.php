@@ -42,6 +42,7 @@ class PostsController extends Controller
     {
         $newPost = new Post();
         $newPost->CategorieName = $request->input('CategorieName');
+        $newPost->descriptionCategory = $request->input('descriptionCategory');
         $newPost->flexRadioDefault = $request->input('flexRadioDefault');
         
         // Obtener el ID del curso seleccionado
@@ -112,11 +113,13 @@ class PostsController extends Controller
     {
         $request->validate([
             'CategorieName' => 'required|max:30',
+            'descriptionCategory' => 'required',
             'flexRadioDefault' => 'required',
             'featured' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);    
 
         $posts->CategorieName = $request->input('CategorieName');
+        $posts->descriptionCategory = $request->input('descriptionCategory');
         $posts->flexRadioDefault = $request->input('flexRadioDefault');
     
         if ($request->hasFile('featured')) {
@@ -135,12 +138,38 @@ class PostsController extends Controller
     
             $posts->featured = $destinationPath . '/' . $fileName;
         }
-    
-        $posts->save();
-        return redirect()->route('posts.index', $posts);
+        
+        $categorieName = $request->input('CategorieName');
+        $Fields_valueCourse = Course::all();
+        $Fields_valuePost = Post::all();
+        echo $posts->id;
+        
+        foreach ($Fields_valuePost as $postValue) {
+            if ($posts->id == $postValue->id) {
+                echo $postValue->CategorieName;
+                foreach ($Fields_valueCourse as $course) {
+                    if ($postValue->CategorieName === $course->category_id) {
+                        
+                        $modifyCourse = Course::where('category_id', $course->category_id)->first();
+        
+                        $modifyCourse->NameCourse = $course->NameCourse;
+                        $modifyCourse->descriptionCourse = $course->descriptionCourse;
+                        $modifyCourse->coursePrice = $course->coursePrice;
+                        $modifyCourse->category_id = $categorieName;
+                        $modifyCourse->featuredCourse = $course->featuredCourse;
+        
+                        $modifyCourse->save();
+                    }
+                }
+            }
+        }
+        
 
+         $posts->save();
+         return redirect()->route('posts.index', $posts);
+        
     }
-    
+
 
     /**
      * Remove the specified resource from storage.
@@ -165,3 +194,38 @@ class PostsController extends Controller
         return redirect()->route('posts.index', $posts);
     }
 }
+/*
+
+    
+            
+                
+             foreach ($Fields_valueCourse as $course) {
+                var_dump($course -> category_id);
+                if($posts -> CategorieName ==  $course -> category_id){
+                    echo "verdader";
+                }
+                else{
+                    echo "falso";
+                }
+                //  if ($course->category_id == $posts -> CategorieName) {
+                //      echo $course->NameCourse;
+                //      // Realiza las modificaciones necesarias en el modelo $course
+                //      // $course->NameCourse = ...
+                //      // $course->descriptionCourse = ...
+                //      // $course->coursePrice = ...
+                //      // $course->category_id = ...
+                //      // $course->featuredCourse = ...
+                //      // $course->save();
+                //  } else {
+                //      echo "no se cumple";
+                //  }
+             }
+
+            
+            
+            
+            //  $posts->save();
+    
+            
+            // return redirect()->route('posts.index', $posts);
+*/

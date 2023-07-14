@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
             $table->text('CategorieName');
+            $table->text('descriptionCategory');
             $table->string('flexRadioDefault');
             $table->string('featured')->nullable();
             $table->unsignedBigInteger('course_id')->nullable();

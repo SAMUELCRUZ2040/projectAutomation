@@ -1,6 +1,6 @@
 @extends('layouts.sections')
 @section('content')
-@vite('resources/js/discover.js')
+@vite('resources/js/app.js')
     @include('layouts.loader')
     <div id="container-discover" class="container-discover">
         <div id="content-discover" class="row content-discover">
@@ -23,7 +23,7 @@
                             Perseverancia
                         </span>
                     </div>
-                    <h4 class="mt-5 fs-4" style="color: #676767; font-family: inherit">Impulsa tu carrera con nuestra pasión por el desarrollo y la creatividad.</h4>
+                    <h4 class="mt-5 fs-4" style="color: #676767; font-family: inherit">Con nuestra academia de aprendizaje que tenemos preparada para ti</h4>
                 </div>
             </div>
             <div class="col-sm-5  col-md-7 col-lg-7 col-xl-5 col-xxl-4 content-img ">
@@ -34,23 +34,23 @@
             <div class="col-sm-2 col-md-2 col-lg-2 col-xl-2 col-xxl-2 container-information pt-5">
                 <ul class="list-information">
                     <li class="item">
-                        <i class="fa-solid fa-handshake"></i>
-                        <p>More than a hundred courses +</p>
+                        <span id="counter1" class="counter">0</span>            
+                        <p>Más de cien cursos +</p>
                     </li>
                     <li class="item">
-                        <i class="fa-solid fa-medal"></i>
-                        <p>Earn lots of badges</p>
+                        <span id="counter2" class="counter">0</span>
+                        <p>Gana mas de 150 insignias +</p>
                     </li>
                     <li class="item">
-                        <i class="fa-solid fa-person"></i>
-                        <p>teamwork</p>
+                        <span id="counter3" class="counter">0</span>   
+                        <p>Gana mas de 200 certificados +</p>
                     </li>
                     <li class="item text-center">
-                        <i class="fa-solid fa-graduation-cap"></i>
-                        <p>Prepare for your professional career</p>
+                        <span id="counter4" class="counter">0</span>                    
+                        <p>Años en el mercado</p>
                     </li>
                     <li class="item">
-                        <a class="" href="https://izyacademy.com/" target="_blank">view courses +</a>
+                        <a id="effect-button" href="https://izyacademy.com/" target="_blank">view courses +</a>
                     </li>
                 </ul>
             </div>
@@ -67,7 +67,7 @@
                 <div class="col-sm-4 col-lg-6 content-img">
                     <div class="container-img">
                         <a href="https://izyacademy.com/course/index.php?categoryid=16" target="_blank">
-                            <img class="img-fluid" src="{{asset("img/img-home/img-2.avif")}}" alt="">
+                            <img class="img-fluid"  src="{{asset("img/img-home/img-2.avif")}}" alt="">
                         </a>
                     </div>
                 </div>
@@ -157,7 +157,7 @@
                                 <p>Scrum es el marco de desarrollo de proyectos ágiles más utilizado a nivel mundial para toda la industria, caracterizado por adoptar una estrategia de construcción incremental del producto o servicio, en lugar de una planificación y ejecución total.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=150" target="_blank">view course +</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=150" target="_blank">view course +</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
@@ -173,12 +173,12 @@
                                 <p>CertiProf® ofrece la certificación profesional en Agile Coach Professional Certificate (ACPC), para quienes deseen aprender e implementar competencias de coaching para encontrar y gestionar los cambios necesarios para lograr objetivos y cumplir metas.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=191" target="_blank">view course +</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=191" target="_blank">view course +</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
                             <div class="container-img">
-                                <img class="img-fluid" src="{{asset('img/image-collection/discover/category-img/img-2.avif')}}" alt="">
+                                <img class="img-fluid"  src="{{asset('img/image-collection/discover/category-img/img-2.avif')}}" alt="">
                             </div>
                         </div>
                     </div>
@@ -189,7 +189,7 @@
                                 <p>La flexibilidad de python lo convierte en una herramienta fundamental para el procesamiento de datos, por lo que este curso de introducción a este lenguaje es un buen comienzo para desarrollar habilidades en el camino de la formación del científico de datos.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=236" target="_blank">view course +</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=236" target="_blank">view course +</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
@@ -205,7 +205,7 @@
                                 <p>Certificarse en inteligencia artificial es una oportunidad de crecimiento profesional, ya que la inteligencia artificial actualmente está arrasando en la industria tecnológica, debido a la gran capacidad de las máquinas para absorber, interpretar y analizar grandes cantidades de datos, optimizando el desarrollo de las actividades.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/index.php?categoryid=38" target="_blank">view course +</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/index.php?categoryid=38" target="_blank">view course +</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
@@ -221,7 +221,7 @@
                                 <p>La automatización de pruebas de software ahorra tiempo a las empresas y reduce los errores. En este curso desarrollarás habilidades en el uso de Selenium WebDriver, que hace competitivo a un trabajador de la industria del software.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=176" target="_blank"> view course</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=176" target="_blank"> view course</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
@@ -237,7 +237,7 @@
                                 <p>Este curso está dedicado a describir la forma en que funcionan los entornos de ciberseguridad. donde aprenderá y explorará una amplia variedad de temas de Ciberseguridad Avanzada.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=233" target="_blank"> view course</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=233" target="_blank"> view course</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
@@ -253,7 +253,7 @@
                                 <p>Este curso es una continuación de "Fundamentos de la programación Java", que cubre el paradigma de programación OOP avanzado, desarrollando habilidades más detalladas en el manejo de clases, los pilares de la programación orientada a objetos: herencia, polimorfismo, encapsulación y abstracción.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=43" target="_blank"> view course</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=43" target="_blank"> view course</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">
@@ -269,7 +269,7 @@
                                 <p>El curso está enfocado a validar y practicar los conocimientos adquiridos en los cursos Fundamentos de Computación en la Nube y Conceptos de Tecnología en la Nube, acompañado de una serie de ejercicios, abordaje y resolución de problemas o situaciones utilizando la nube.</p>
                             </div>
                             <div class="container-view">
-                                <a href="https://izyacademy.com/course/view.php?id=227" target="_blank">view course +</a>
+                                <a id="effect-button" href="https://izyacademy.com/course/view.php?id=227" target="_blank">view course +</a>
                             </div>
                         </div>
                         <div class="col-md-4 col-lg-4 content-img">

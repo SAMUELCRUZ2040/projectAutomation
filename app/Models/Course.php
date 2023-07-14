@@ -22,4 +22,10 @@ class Course extends Model
         return $this->belongsTo(Post::class);
     }
     
+    public function posts()
+{
+    return $this->hasMany(Post::class);
+}
+
+    
 }

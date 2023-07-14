@@ -27,7 +27,7 @@
     <!-- animation -->
     <link rel="stylesheet" href="https://unpkg.com/transition-style">
     
-    @vite(['resources/js/app.js', 'resources/sass/app.scss', 'resources/css/transitions.css'])
+    @vite(['resources/js/app.js', 'resources/sass/app.scss', 'resources/css/transitions.css', 'resources/css/app.css'])
     
     <title>Automatización | IzyAcademy</title>
 </head>
@@ -73,7 +73,45 @@
         </span>
         <a href="#" class="whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
-        </a>  
+        </a>
+        @guest
+            @if (Route::has('login'))
+                @endif
+            @else
+            <div id="user" class="dropdown user">
+                <button class="btn btn-secondary dropdown-toggle button-user dropdown-toggle-nocaret" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{{asset(Auth::user()->imgUser)}}" alt="">
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="user">
+
+                    <li>
+                        <span class="dropdown-item fw-normal fs-6 ms-1">
+                            {{ Auth::user()->username }}
+                            <span class="fw-normal fs-6 ms-3">
+                            $ {{ Auth::user()->money }}
+                            </span>
+                        </span>
+                    </li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li>
+                        <a class="dropdown-item" href="{{route('index.user')}}">Ver perfil</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="#">Ver Cursos Comprados</a>
+                    </li>
+                    <a class="dropdown-item text-dark" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                        {{ __('Cerrar Sesión') }}
+                    </a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </ul>
+            </div>
+        @endguest
+        
+          
         <div class="mini-menu d-flex h-100 align-items-center justify-content-center text-center flex-column">
             <div class="row navigation-one w-100">
                 <div class="col-lg-9">
@@ -189,8 +227,7 @@
     <!---------- Start Container Printipal ---------->
 
     <section id="To-do-principal">
-
-        @yield('content')
+            @yield('content')
     </section>
 
     <!---------- End Container Printipal ---------->

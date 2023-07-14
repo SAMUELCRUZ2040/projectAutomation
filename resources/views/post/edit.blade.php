@@ -47,11 +47,21 @@
       <div class="mb-2">
           <label for="exampleInputEmail1" class="form-label">Name</label>
           <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$show -> name}}">
+          @error('name')
+            <span class="invalid-feedback" role="alert" style="display: block">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
         </div>
 
         <div class="mb-2">
           <label for="exampleInputEmail1" class="form-label">Username</label>
           <input name="username" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$show -> username}}">
+          @error('username')
+            <span class="invalid-feedback" role="alert" style="display: block">
+              <strong>{{ $message }}</strong>
+            </span>
+          @enderror
         </div>
 
         <div class="mb-2 row">
@@ -85,6 +95,11 @@
               <div class="mb-2">
                   <label for="exampleInputEmail1" class="form-label">City</label>
                   <input name="city" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$show -> city}}">
+                  @error('city')
+                    <span class="invalid-feedback" role="alert" style="display: block">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
               </div>
           </div>
         </div>
@@ -93,19 +108,33 @@
               <div class="mb-2">
                   <label for="exampleInputEmail1" class="form-label">Identification Number</label>
                   <input name="numberidentification" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$show -> numberidentification}}">
+                  @error('numberidentification')
+                    <span class="invalid-feedback" role="alert" style="display: block">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
               </div>
           </div>
           <div class="col-lg-6">
               <div class="mb-2">
                   <label for="exampleInputEmail1" class="form-label">Phone</label>
-                  
                   <input name="phone" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$show -> phone}}">
+                  @error('phone')
+                    <span class="invalid-feedback" role="alert" style="display: block">
+                      <strong>{{ $message }}</strong>
+                    </span>
+                  @enderror
               </div>
           </div>  
         </div>
         <div class="mb-2">
           <label for="exampleInputEmail1" class="form-label">Email address</label>
           <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$show -> email}}">
+          @error('email')
+            <span class="invalid-feedback" role="alert" style="display: block">
+              <strong>{{ $message }}</strong>
+            </span>
+           @enderror
         </div>
           <button type="submit" class="btn btn-primary mt-4">Modify</button>
     </form>

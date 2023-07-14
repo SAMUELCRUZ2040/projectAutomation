@@ -6,6 +6,7 @@ use App\Http\Controllers\CheckInController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SingInController;
 use App\Http\Controllers\CreateCourseController;
+use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -36,8 +37,9 @@ Route::patch('/blog/{show}', [CheckInController::class, 'update'])->name('update
 
 Route::delete('/blog/{show}', [CheckInController::class, 'destroy'])->name('destroy');
 
-// login resource
-Route::post('/SingInresources', [SingInController::class, 'store'])->name('validate.singIn');
+// separate users
+
+Route::get('/ViewUser', [UserController::class, 'index'])->name('index.user');
 
 
 // make a post

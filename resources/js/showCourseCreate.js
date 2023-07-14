@@ -11,7 +11,6 @@ $(document).ready(function() {
       });
       $(window).on('load', function() {
          setTimeout(function() {
-           $('.container-text-printipal .container').addClass('active-effect-preloader');
        }, 1700);
     })
 });

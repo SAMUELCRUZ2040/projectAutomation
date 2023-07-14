@@ -9,10 +9,7 @@ $(document).ready(function() {
           cardsPublicity = $('#container-transition-courses .container-printipal-courses .container-courses'),
           active = $('#container-transition-courses .container-printipal-courses .container-courses:first-child');
 
-    // preloader 
-    $('.preloader').delay(600).fadeOut(700, function() {
-        $(this).remove();
-    });
+
     
     $(window).on('load', function() {
         setTimeout(function() {
@@ -79,7 +76,7 @@ $(document).ready(function() {
           $('.content-cards-discover .container-printipal-img:first-child').addClass('animate-scroll');
           console.log("eliminar1")
         }
-      });
+        });
 
       $('#To-do-principal').scroll(function() {
         const contenedorPosicion = $(this).scrollTop() + $(this).outerHeight();
@@ -128,14 +125,6 @@ $(document).ready(function() {
           $('#footer .container-contact .container-cards .card-footer .content-card').addClass('scroll-courses-transition');
         }
       });
-      // transition-courses
-      $("#container-transition-courses .mini-navbar ul > li").click(function (e) { 
-        e.preventDefault();
-        const selector = $(this).attr('data-filter');
-        if(selector){
-            cardsPublicity.filter('.' + selector).addClass('active-courses-discover');
-            cardsPublicity.not('.' + selector).removeClass('active-courses-discover');
-        }
-    });
+
 });
 

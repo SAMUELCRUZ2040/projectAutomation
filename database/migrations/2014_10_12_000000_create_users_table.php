@@ -22,6 +22,8 @@ return new class extends Migration
             $table->bigInteger('numberidentification');
             $table->bigInteger('phone');
             $table->string('email')->unique();
+            $table->bigInteger('money')->default(0);
+            $table->string('imgUser')->default('img/image-collection/user/user.png');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

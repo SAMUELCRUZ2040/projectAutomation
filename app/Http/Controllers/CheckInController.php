@@ -81,6 +81,17 @@ class CheckInController extends Controller
      */
     public function update(Request $request, User $show)
     {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:255'],
+            'pais' => ['required', 'string', 'max:255'],
+            'city' => ['required', 'string', 'max:255'],
+            'numberidentification' => ['required'],
+            'phone' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+        ]);    
+
+
         $show ->name = $request->input('name');
         $show ->username = $request->input('username');
         $show ->pais = $request->input('pais');

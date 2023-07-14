@@ -1,16 +1,24 @@
 @extends('layouts.sections')
 @section('content')
 @include('layouts.loader')
+@vite('resources/js/app.js')
+
 <div class="container h-100">
   <div class="row w-100 h-100">
-
     {{-- show card category --}}
 
     @foreach ($show as $post)
     
     {{-- Titlle --}}
-      <span class="fs-1 mt-5 pt-5 fw-bold">¿Do you want to modify the {{$post -> CategorieName}} category? </span>
-
+    <div id="container-posts" class="row container-posts">
+      <div class="col-lg-12 container-text-printipal d-flex align-items-end">
+        <div class="container">
+          <div id="container-letter" class="container-letter text-center">
+            <span id="Effect-letter" style="font-size: 38px">¿Deseas Modificar la categoría de  {{$post -> CategorieName}} ?</span>
+          </div>
+        </div>
+      </div>
+    </div>
       <div class="col-lg-6 order-2 show-card-category">
         {{-- Level stars --}}
         <div class="container-cards container row gy-5">
@@ -24,63 +32,9 @@
                 </div>
                 <div class="card-body">
                   <h3>{{ $post -> CategorieName }} </h3>
-                </div>
-                <div class="start-course">
-                  @if ($post -> flexRadioDefault === 'Easy')
-                  <ul class="star d-flex flex-row justify-content-center" style="list-style: none">
-                    <li class="item-star">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-regular fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-regular fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-regular fa-star"></i>
-                    </li>
-                  </ul>
-                  @elseif ($post -> flexRadioDefault === 'Medium')
-                  <ul class="star d-flex flex-row justify-content-center" style="list-style: none">
-                    <li class="item-star">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-regular fa-star"></i>
-                    </li>
-                  </ul>
-                  @elseif ($post -> flexRadioDefault === 'Difficult')
-                  <ul class="star d-flex flex-row justify-content-center" style="list-style: none">
-                    <li class="item-star">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star"></i>
-                    </li>
-                    <li class="item-star ms-2">
-                      <i class="fa-solid fa-star-half-stroke"></i>
-                    </li>
-                  </ul>
-                  @endif
+                  <p class="mt-3" style="text-align: justify">
+                    {{ $post -> descriptionCategory }}
+                  </p>
                 </div>
               </div>
             </a>
@@ -99,23 +53,29 @@
             @csrf @method('PATCH')
 
             {{-- Category Name --}}
-
-            <div class="row mb-3">
-              <label for="exampleInputEmail1" class="" class="form-label text-md-end">{{ __('Categorie Name:') }}</label>
-              <div class="col-md-12">
-                  <input id="exampleInputEmail1" type="text" aria-describedby="emailHelp" class="form-control @error('email') is-invalid @enderror" name="CategorieName" value="{{ old('CategorieName') }}" required autocomplete="CategorieName" autofocus>
-                  @error('CategorieName')
-                      <span class="invalid-feedback" role="alert" style="display: block">
-                          <strong>{{ $message }}</strong>
-                      </span>
-                  @enderror
-              </div>
-          </div>
+                
+            <div class="mb-3 form-group">
+              <input id="exampleInputEmail1" type="text" aria-describedby="emailHelp" class="form-control form-input-transition @error('email') is-invalid @enderror" name="CategorieName" value="{{ old('CategorieName') }}" required autocomplete="off" autofocus placeholder=" ">
+              <label for="exampleInputEmail1"  class="form-label text-md-end form-label-transition">{{ __('Nombre categoria') }}</label>
+                @error('CategorieName')
+                    <span class="invalid-feedback" role="alert" style="display: block">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="mb-3 form-group">
+              <input id="exampleInputEmail1" type="text" aria-describedby="emailHelp" class="form-control form-input-transition @error('descriptionCategory') is-invalid @enderror" name="descriptionCategory" value="{{ old('descriptionCategory') }}" required autocomplete="off" autofocus placeholder=" ">
+              <label for="exampleInputEmail1"  class="form-label text-md-end form-label-transition">{{ __('Descripcion de la categoria') }}</label>
+                @error('descriptionCategory')
+                    <span class="invalid-feedback" role="alert" style="display: block">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
 
           {{-- level stars --}}
 
-          <div class="container-check d-flex flex-column mt-2">
-            <label for="exampleInputEmail1" class="" class="form-label text-md-end">{{ __('Select the level') }}</label>
+          <div class="container-check d-flex flex-row mt-2">
             <div class="form-check me-3">
                 <input value="Easy" class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required>
                 <label  class="form-check-label" for="flexRadioDefault1">
@@ -146,7 +106,7 @@
           <div class="row mt-3" id="group__file">
             <label for="exampleInputEmail1" class="" class="form-label text-md-end">{{ __('select an image:') }}</label>
             <div class="col-md-12">
-              <input name="featured" id="featured"  type="file" id="verifyPasword" name="verifyPasword" autocomplete="off" value="{{$posts -> featured}}">
+              <input name="featured" id="featured" class="img-input"  type="file" id="verifyPasword" name="verifyPasword" autocomplete="off" value="{{$posts -> featured}}">
                 @error('featured')
                     <span class="invalid-feedback" role="alert" style="display: block">
                         <strong>{{ $message }}</strong>
@@ -154,12 +114,14 @@
                 @enderror
             </div>
           </div>
-
-            <button class="btn btn-primary modify-btn mt-4 w-100" type="submit" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">Modify category</button>
+          <div class="container-button d-flex justify-content-center aligm-items-center mt-5">
+            <button id="effect-button" type="submit" class="btn fs-6" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal" style="width: 25%">Modificar</button>
+          </div>
           </form>
         @include('layouts.alertEdit')
       @endforeach
     </div>
   </div>
 </div>
+@include('layouts.footer')
 @endsection

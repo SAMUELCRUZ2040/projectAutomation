@@ -29,24 +29,16 @@ $(document).ready(function() {
               carga.fadeOut();
           }, 2000);
           setTimeout(function() {
-            $('#container-posts .container-text-printipal .container').addClass('active-effect-preloader');
+
         }, 600);
      });
 
     $('.preloader').delay(600).fadeOut(700, function() {
         $(this).remove();
-    });
+    }); 
 
     // cards categories
-    $("#container-options ul >li").click(function (e) { 
-        e.preventDefault();
-        const selector = $(this).attr('data-filter');
 
-        if(selector){
-            cardsPublicity.filter('.' + selector).addClass('active');
-            cardsPublicity.not('.' + selector).removeClass('active');
-        }
-    });
 
     $("#container-options ul >li").click(function(e) {
         e.preventDefault();

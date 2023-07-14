@@ -1,6 +1,6 @@
 @extends('layouts.sections')
 @section('content')
-@vite('resources/js/postForm2.js')
+@vite('resources/js/app.js')
 @include('layouts.loader')
   {{-- front page --}}
   <div id="container-posts" class="row container-posts">
@@ -22,20 +22,14 @@
           <div class="accordion-item">
             <h2 class="accordion-header">
               <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                What action do you want to perform?
+                ¿Qué acción deseas realizar?
               </button>  
             </h2>
             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
               <div class="container-create d-flex justiyfy-conten-start align-items-start p-4">
-                <a href="{{route('post.create')}}" id="btn-form" class="btn btn-primary">
+                <a href="{{route('post.create')}}" id="effect-button" class="btn">
                   Create Category
                 </a>
-                <div class="container-counter ms-3 d-flex justify-content-center align-items-center">
-                  <span class="fs-2 fw-bold">
-                      <i class="fa-solid fa-user-graduate fs-3" style="-webkit-text-stroke: 1px #000; color: transparent"></i>
-                      {{ $postCount }}
-                  </span>
-                </div>
               </div>
             </div>
           </div>
@@ -43,6 +37,12 @@
       </div>
       <div class="container-tittle container text-center mb-5 mt-5">
         <span class="fs-1 fw-bold">Nuestras Categorías de Cursos</span>
+        <div class="container-counter ms-3 d-flex justify-content-start align-items-center">
+          <span class="fs-2 fw-bold">
+            <i class="fa-solid fa-scroll fs-3" style="-webkit-text-stroke: 1px #000; color: transparent"></i>
+              {{ $postCount }}
+          </span>
+        </div>
       </div>
       <div class="container-cards container row gy-5">
           @foreach ($posts as $post)
@@ -56,6 +56,9 @@
                   </div>
                   <div class="card-body">
                     <h3>{{ $post -> CategorieName }} </h3>
+                    <p class="mt-3" style="text-align: justify">
+                      {{ $post -> descriptionCategory }}
+                    </p>
                   </div>
                 </div>
               </a>
