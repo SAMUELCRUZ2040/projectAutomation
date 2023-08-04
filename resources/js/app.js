@@ -22,7 +22,7 @@ $(document).ready(function() {
     descriptionDiscover = $('#container-discover .content-discover .description .mini-description h1'),
     animationDiscover = $('#container-discover'),
     effectLater = $("#container-posts .container-text-printipal .container");//post
-    ;
+    
     
     /*-------------------------- GENERAL  --------------------------------*/
         $(window).on('load', function() {
@@ -39,6 +39,31 @@ $(document).ready(function() {
                 descriptionDiscover.addClass('delay-elements');
                 $('#container-discover .content-discover .description .mini-description span, #container-discover .content-discover .description .mini-description .container-effect-letter').addClass('active-effect-preloader');
                 $('#container-discover .content-discover .description .mini-description').addClass('active-effect-preloader-retard');
+                      
+                /* COUNTERS */
+
+                function animateValue(element, start, end, duration) {
+                    $({ value: start }).animate(
+                    { value: end },
+                    {
+                        duration: duration,
+                        step: function () {
+                        element.text(Math.floor(this.value));
+                        },
+                        complete: function () {
+                        element.text(end);
+                        }
+                    }
+                    );
+                }
+                
+                $(document).ready(function () {
+                    animateValue($('#counter1'), 0, 100, 4000);
+                    animateValue($('#counter2'), 0, 150, 4000);
+                    animateValue($('#counter3'), 0, 120, 4000);
+                    animateValue($('#counter4'), 0, 2, 4000);
+                });
+          
             }, 100);
             setTimeout(function() {
                 descriptionDiscover2.addClass('delay-elements');
@@ -116,30 +141,7 @@ $(document).ready(function() {
         }
         );
 
-        /* COUNTERS */
 
-        function animateValue(element, start, end, duration) {
-            $({ value: start }).animate(
-              { value: end },
-              {
-                duration: duration,
-                step: function () {
-                  element.text(Math.floor(this.value));
-                },
-                complete: function () {
-                  element.text(end);
-                }
-              }
-            );
-          }
-          
-          $(document).ready(function () {
-            animateValue($('#counter1'), 0, 100, 4000);
-            animateValue($('#counter2'), 0, 150, 4000);
-            animateValue($('#counter3'), 0, 120, 4000);
-            animateValue($('#counter4'), 0, 2, 4000);
-          });
-          
         
         /*  COURSES TRANSITIONS */ 
 
@@ -242,6 +244,29 @@ $(document).ready(function() {
                 $(".mini-menu-view-user .container-items-view-profile." + selectorUser).addClass('active-mini-menu-view-profile');
             }
         });
+        /* SCROLL COURSES */
+        const coursesAvailable = $('.courses-available');
+        let isDragging = false;
+        let startPositionX = 0;
+        let scrollStartPosition = 0;
+      
+        coursesAvailable.mousedown(function(event) {
+          isDragging = true;
+          startPositionX = event.pageX;
+          scrollStartPosition = coursesAvailable.scrollLeft();
+        });
+      
+        $(document).mousemove(function(event) {
+          if (isDragging) {
+            const deltaX = event.pageX - startPositionX;
+            coursesAvailable.scrollLeft(scrollStartPosition - deltaX);
+          }
+        });
+      
+        $(document).mouseup(function() {
+          isDragging = false;
+        });
+  
         /* POST COURSES  */
         $("#container-options ul >li").click(function (e) { 
             e.preventDefault();
@@ -252,7 +277,54 @@ $(document).ready(function() {
                 $('#container-cards-categories .container-printipal-cards-publicity .container-cards-courses-izy .card-courses-izy').not('.' + selector).removeClass('active');
             }
         });
+        /* ADD EDUCATION */
+        $("#add-education").click(function (e) { 
+            e.preventDefault();
+            $(".mini-menu-view-user .container-form-add-education").addClass("active-add-education");
+            $("#add-education").hide();
+        });
+        $(".cancel-education").click(function (e) { 
+            $(".mini-menu-view-user .container-form-add-education").removeClass("active-add-education");
+            $("#add-education").show();
+        });
+        /* DISABLE FORM INFORMATIONO USER */
+        $("#effect-edit-user").click(function (e) { 
+            e.preventDefault();
+            let inputsUser = $("#container-view-profile .container-view-information-printipal .mini-menu-view-user .information-user form input");
+            let nameInput = [];
+
+            if($(".container-items-view-profile").hasClass("active-mini-menu-view-profile")){
+                $(".container-items-view-profile").removeClass("active-mini-menu-view-profile");
+            }
+            $(".information-user").addClass("active-mini-menu-view-profile");
+            $(".options-profile , #effect-edit-user").hide();
+            
+            inputsUser.prop("disabled", true);
+            inputsUser.each(function () { 
+                let extractName = $(this).attr('name');
+                nameInput.push(extractName);
+            });
+            
+            $(".active-edit-input").click(function (e) { 
+                e.preventDefault();
+                let inputId = $(this).attr('data-filter');
+            
+                let inputToEnable = $("input[name='" + inputId + "']");
+                
+                if (inputToEnable.length > 0) {
+                    inputToEnable.prop("disabled", false);
+                }            
+            });
+        });
+        $(".cancel-edit-information-user").click(function (e) { 
+            e.preventDefault();
+            $(".information-user").addClass("active-mini-menu-view-profile");
+            $(".options-profile , #effect-edit-user").show();
+            $(".information-user").removeClass("active-mini-menu-view-profile");
+            $(".education").addClass("active-mini-menu-view-profile");
+        });
     });
+    
 
 
 

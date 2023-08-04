@@ -74,44 +74,8 @@
         <a href="#" class="whatsapp">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
-        @guest
-            @if (Route::has('login'))
-                @endif
-            @else
-            <div id="user" class="dropdown user">
-                <button class="btn btn-secondary dropdown-toggle button-user dropdown-toggle-nocaret" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="{{asset(Auth::user()->imgUser)}}" alt="">
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="user">
 
-                    <li>
-                        <span class="dropdown-item fw-normal fs-6 ms-1">
-                            {{ Auth::user()->username }}
-                            <span class="fw-normal fs-6 ms-3">
-                            $ {{ Auth::user()->money }}
-                            </span>
-                        </span>
-                    </li>
-                    <li><hr class="dropdown-divider"></li>
-                    <li>
-                        <a class="dropdown-item" href="{{route('index.user')}}">Ver perfil</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href="#">Ver Cursos Comprados</a>
-                    </li>
-                    <a class="dropdown-item text-dark" href="{{ route('logout') }}"
-                        onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">
-                        {{ __('Cerrar Sesión') }}
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                        @csrf
-                    </form>
-                </ul>
-            </div>
-        @endguest
-        
-          
+              
         <div class="mini-menu d-flex h-100 align-items-center justify-content-center text-center flex-column">
             <div class="row navigation-one w-100">
                 <div class="col-lg-9">
@@ -146,7 +110,7 @@
                     <ul class="list-publicty">
                         <li class="item fw-bold text-dark fs-5">Hablemos</li>
                         <li class="item fs-normal fs-6">+57321874854</li>
-                        <li class="item fw-bold text-dark fs-5 mt-4">Comuniquenos</li>
+                        <li class="item fw-bold text-dark fs-5 mt-4">Comuníquenos</li>
                         <li class="item fs-normal fs-6 d-flex flex-column">
                             <span>IzyAcademy@qvision.us</span>
                             <span>IzyAcademy@qvision.us</span>
@@ -156,13 +120,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a id="Login" class="nav-link text-dark" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
     
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a id="Register" class="nav-link text-dark" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -198,7 +162,7 @@
                     <a class="text-dark fs-5 lh-1 fw-bold" href="{{route('blog')}}">Blog</a>
                 </div>
                 <div class="col-lg-3 d-flex justify-content-center align-items-center">
-                    <span>Siguenos en nuestras redes</span>
+                    <span>Síguenos en nuestras redes</span>
                     <ul class="list-items-social-networks d-flex justify-content-center align-items-center p-0 m-0 ms-3" style="list-style: none; gap: 20px">
                         <li class="item">
                             <a class="text-dark fs-3" href="#">
@@ -227,6 +191,68 @@
     <!---------- Start Container Printipal ---------->
 
     <section id="To-do-principal">
+        @guest
+        @if (Route::has('login'))
+            @endif
+        @else
+            <div class="container-nav-login">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="logo">
+                            <img class="img-fluid" src="" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <ul class="list-login">
+                            <li class="item">
+                                <a href="#">
+                                    <i class="fa-regular fa-bell"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <i class="fa-solid fa-bullhorn"></i>
+                                </a>
+                            </li>
+                            <li class="item">
+
+                                <div id="user" class="dropdown user">
+                                    <button class="btn btn-secondary dropdown-toggle button-user dropdown-toggle-nocaret" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <img src="{{asset(Auth::user()->imgUser)}}" alt="">
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="user">
+                    
+                                        <li>
+                                            <span class="dropdown-item fw-normal fs-6 ms-1">
+                                                {{ Auth::user()->username }}
+                                                <span class="fw-normal fs-6 ms-3">
+                                                $ {{ Auth::user()->money }}
+                                                </span>
+                                            </span>
+                                        </li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li>
+                                            <a class="dropdown-item" href="{{route('index.user')}}">Ver perfil</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#">Ver Cursos Comprados</a>
+                                        </li>
+                                        <a class="dropdown-item text-dark" href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                            document.getElementById('logout-form').submit();">
+                                            {{ __('Cerrar Sesión') }}
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        @endguest
             @yield('content')
     </section>
 

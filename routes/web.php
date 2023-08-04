@@ -7,6 +7,7 @@ use App\Http\Controllers\PostsController;
 use App\Http\Controllers\SingInController;
 use App\Http\Controllers\CreateCourseController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\addeducations;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -41,8 +42,14 @@ Route::delete('/blog/{show}', [CheckInController::class, 'destroy'])->name('dest
 
 Route::get('/ViewUser', [UserController::class, 'index'])->name('index.user');
 
+Route::get('/edit/users/{User}', [UserController::class, 'update'])->name('update.edit.users');
+
+// add-education-users
+
+Route::post('/createEducation', [AddEducations::class, 'store'])->name('create.education');
 
 // make a post
+
 Route::get('/post', [PostsController::class, 'index'])->name('posts.index');
 
 Route::get('/createcategory', [PostsController::class, 'create'])->name('post.create');

@@ -2,7 +2,7 @@
     <div class="container-contact container-fluid">
         <div class="container row container-cards">
             <div class="col-lg-2 tittle text-center d-flex justify-content-center align-items-center">
-                <span class="fs-4 fw-normal">Contactanos !!!</span>
+                <span class="fs-4 fw-normal">Contáctanos !!!</span>
             </div>
             <div class="col-lg-5 card-footer">
                 <div class="content-card">
@@ -12,9 +12,9 @@
                     </div>
                     <div class="description-card-footer">
                         <h3>
-                            Contactanos
+                            Contáctanos
                         </h3>
-                        <a href="">Escribenos +</a>
+                        <a href="">Escríbenos +</a>
                     </div>
                 </div>
             </div>
@@ -26,9 +26,9 @@
                     </div>
                     <div class="description-card-footer">
                         <h3>
-                            Contactanos
+                            Contáctanos
                         </h3>
-                        <a href="#" id="escribenos">Escribenos +</a>
+                        <a href="#" id="escribenos">Escríbenos +</a>
                     </div>
                 </div>
             </div>
@@ -41,8 +41,8 @@
             </div>
         </div>
         <div class="col-lg-2">
-            <p>vistianos</p>
-            <a href="">Medellin</a>
+            <p>visítanos</p>
+            <a href="#">Medellín</a>
         </div>
         <div class="col-lg-2 d-flex flex-column">
             <p>Hablemos</p>
@@ -50,19 +50,19 @@
             <a href="{{route('/')}}">3216549874</a>
         </div>
         <div class="col-lg-3">
-            <p>Escribenos</p>
+            <p>Escríbenos</p>
             <a href="#">izyacademy@qvision.com.co</a>
         </div>
     </div>
     <div class="container-description-footer container row">
         <div class="col-lg-4 d-flex flex-row" style="gap: 20px">
-            <p class="">Siguenos en nuestras redes</p>
+            <p class="">Síguenos en nuestras redes</p>
             <i class="fa-brands fa-facebook-f fa-bounce"></i>
             <i class="fa-brands fa-instagram fa-bounce"></i>
             <i class="fa-brands fa-twitter fa-bounce"></i>
         </div>
         <div class="col-lg-8">
-            Esta pagina esta promocionada por IzyAcademy, y esta totalmmente desarrollada por la plataforma de IzyAcademy
+            Esta página está promocionada por IzyAcademy, y está totalmente desarrollada por la plataforma de IzyAcademy
         </div>
     </div>
 

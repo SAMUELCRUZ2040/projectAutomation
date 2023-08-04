@@ -39,11 +39,11 @@
                     </li>
                     <li class="item">
                         <span id="counter2" class="counter">0</span>
-                        <p>Gana mas de 150 insignias +</p>
+                        <p>Gana más de 150 insignias +</p>
                     </li>
                     <li class="item">
                         <span id="counter3" class="counter">0</span>   
-                        <p>Gana mas de 200 certificados +</p>
+                        <p>Gana más de 200 certificados +</p>
                     </li>
                     <li class="item text-center">
                         <span id="counter4" class="counter">0</span>                    
@@ -186,7 +186,7 @@
                         <div class="col-md-8 col-lg-8 description-courses">
                             <div class="description">
                                 <h2>Introducción al Lenguaje de Programación Python</h2>
-                                <p>La flexibilidad de python lo convierte en una herramienta fundamental para el procesamiento de datos, por lo que este curso de introducción a este lenguaje es un buen comienzo para desarrollar habilidades en el camino de la formación del científico de datos.</p>
+                                <p>La flexibilidad de Python lo convierte en una herramienta fundamental para el procesamiento de datos, por lo que este curso de introducción a este lenguaje es un buen comienzo para desarrollar habilidades en el camino de la formación del científico de datos.</p>
                             </div>
                             <div class="container-view">
                                 <a id="effect-button" href="https://izyacademy.com/course/view.php?id=236" target="_blank">view course +</a>
@@ -234,7 +234,7 @@
                         <div class="col-md-8 col-lg-8 description-courses">
                             <div class="description">
                                 <h2>Advanced Cybersecurity</h2>
-                                <p>Este curso está dedicado a describir la forma en que funcionan los entornos de ciberseguridad. donde aprenderá y explorará una amplia variedad de temas de Ciberseguridad Avanzada.</p>
+                                <p>Este curso esta dedicado a describir la forma en que funcionan los entornos de ciberseguridad. Donde aprenderá y explorará una amplia variedad de temas de Ciberseguridad Avanzada.</p>
                             </div>
                             <div class="container-view">
                                 <a id="effect-button" href="https://izyacademy.com/course/view.php?id=233" target="_blank"> view course</a>
@@ -266,7 +266,7 @@
                         <div class="col-md-8 col-lg-8 description-courses">
                             <div class="description">
                                 <h2>Cloud Technology Lab</h2>
-                                <p>El curso está enfocado a validar y practicar los conocimientos adquiridos en los cursos Fundamentos de Computación en la Nube y Conceptos de Tecnología en la Nube, acompañado de una serie de ejercicios, abordaje y resolución de problemas o situaciones utilizando la nube.</p>
+                                <p>El curso está enfocado a validar y practicar los conocimientos adquiridos en los cursos Fundamentos de Computación en la nube y Conceptos de Tecnología en la nube, acompañado de una serie de ejercicios, abordaje y resolución de problemas o situaciones utilizando la nube.</p>
                             </div>
                             <div class="container-view">
                                 <a id="effect-button" href="https://izyacademy.com/course/view.php?id=227" target="_blank">view course +</a>
@@ -294,7 +294,7 @@
                         <h3>3 razones clave por las que deberías empezar a impulsar tu carrera profesional con nosotros</h3>
                     </div>
                     <h2>3 razones clave por las que deberías empezar a impulsar tu carrera profesional con nosotros</h2>
-                    <p>Somos una empresa impulsada por el liderazgo y siguiendo las reglas de scrum, damos buena compañía a nuestros aprendices enseñándoles con buenas prácticas</p>
+                    <p>Somos una empresa impulsada por el liderazgo y siguiendo las reglas de Scrum, damos buena compañía a nuestros aprendices enseñándoles con buenas prácticas</p>
                 </div>
                 <div class="card-last col-lg-3">
                     <div class="container-img-effect">

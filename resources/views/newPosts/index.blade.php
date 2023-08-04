@@ -70,7 +70,7 @@
   <div id="container-cards-categories" class="container-cards-categories container">
     {{-- tittle --}}
     <div class="mini-description container mt-5">
-      <span class="fs-1 fw-bold">Prepárate para tu crecer profesionalmente</span>
+      <span class="fs-1 fw-bold">Prepárate para crecer profesionalmente</span>
     </div>
     {{-- mini-menu cards --}}
       <div id="container-options" class="row container container-options">
